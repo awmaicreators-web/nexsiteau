@@ -1,0 +1,6 @@
+{
+  "name": "NexSite — Website Development for Australian Businesses",
+  "description": "NexSite designs and develops modern, responsive and high-performance websites for businesses across Australia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

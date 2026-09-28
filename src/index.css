@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-space: 'Space Grotesk', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* NexSite Color System */
+    --color-primary: #0A0A0A;
+    --color-dark: #111111;
+    --color-white: #FFFFFF;
+    --color-offwhite: #F7F7F5;
+    --color-lightgrey: #F1F1EF;
+    --color-textgrey: #6B6B6B;
+    --color-border: #E6E6E3;
+    --color-accent: #35b2ff;
+    --color-accent-alt: #009dff;
+  }
+
+  body {
+    font-family: var(--font-inter);
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+    overflow-x: hidden;
+  }
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 24s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Subtle Hero Floating Animation */
+@keyframes floatSubtle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float-subtle {
+  animation: floatSubtle 6s ease-in-out infinite;
+}
+
+/* Shimmer highlight for accent button */
+.btn-accent-glow {
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-accent-glow:hover {
+  box-shadow: 0 8px 24px -4px rgba(53, 117, 255, 0.32);
+}
+
+/* Package Card lift */
+.package-card-hover {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.package-card-hover:hover {
+  transform: translateY(-6px);
+}
+
+/* Service Card hover */
+.service-card-hover {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.service-card-hover:hover {
+  transform: translateY(-4px);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 140, 140, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 140, 140, 0.45);
+}

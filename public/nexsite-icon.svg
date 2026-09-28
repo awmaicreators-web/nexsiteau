@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <linearGradient id="nexsiteGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A62FF" />
+      <stop offset="100%" stop-color="#0E48D6" />
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="14" fill="url(#nexsiteGradient)" />
+  <path d="M24 7 C24 16.39 31.61 24 41 24 C31.61 24 24 31.61 24 41 C24 31.61 16.39 24 7 24 C16.39 24 24 16.39 24 7 Z" fill="#FFFFFF" />
+</svg>

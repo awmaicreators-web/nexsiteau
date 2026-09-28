@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A62FF" />
+      <stop offset="100%" stop-color="#0E48D6" />
+    </linearGradient>
+  </defs>
+  <!-- Rounded blue square with 4-point sparkle star -->
+  <rect x="2" y="6" width="48" height="48" rx="14" fill="url(#logoGrad)" />
+  <path d="M26 13 C26 21.5 33 28.5 41.5 28.5 C33 28.5 26 35.5 26 44 C26 35.5 19 28.5 10.5 28.5 C19 28.5 26 21.5 26 13 Z" fill="#FFFFFF" />
+  
+  <!-- Nexsite text -->
+  <text x="64" y="41" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="500" letter-spacing="-0.8px" fill="#0A0A0A">Nexsite</text>
+</svg>

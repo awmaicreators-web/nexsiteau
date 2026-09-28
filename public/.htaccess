@@ -1,0 +1,106 @@
+# ====================================================================
+# NexSite Production Configuration (Namecheap cPanel / Apache / LiteSpeed)
+# Single Page Application routing, API dispatcher, caching & security
+# ====================================================================
+
+# Disable directory indexing
+Options -Indexes
+
+# Follow symbolic links
+Options +FollowSymLinks
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. API Route Dispatcher for Namecheap cPanel PHP Backend
+  RewriteRule ^api/orders/create/?$ api/index.php?action=create_order [QSA,L]
+  RewriteRule ^api/orders/capture/?$ api/index.php?action=capture_order [QSA,L]
+  RewriteRule ^api/contact/?$ api/index.php?action=contact [QSA,L]
+  RewriteRule ^api/config/?$ api/index.php?action=config [QSA,L]
+  RewriteRule ^api/(.*)$ api/index.php [QSA,L]
+
+  # 2. Existing files, directories, and symlinks served as-is
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d [OR]
+  RewriteCond %{REQUEST_FILENAME} -l
+  RewriteRule ^ - [L]
+
+  # 3. SPA Fallback: Route all client routes (/packages, /services, etc.) to index.html
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Protect sensitive files (.env, .git, .htaccess, package.json, tsconfig.json)
+<FilesMatch "^\.|\.(env|json|lock|ts|tsx|md)$">
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>
+
+# Allow public web access to .htaccess in subfolders where explicitly permitted
+<Files "index.html">
+  <IfModule mod_authz_core.c>
+    Require all granted
+  </IfModule>
+</Files>
+
+# ====================================================================
+# Security Headers (Section 46 of Master Specification)
+# ====================================================================
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# ====================================================================
+# Browser Caching & Performance (Section 40 of Master Specification)
+# ====================================================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+
+  # HTML documents (short cache for instant updates)
+  ExpiresByType text/html "access plus 0 seconds"
+
+  # Static bundle assets (fingerprinted CSS and JS)
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+
+  # Media & Images
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Web Fonts
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+</IfModule>
+
+# ====================================================================
+# Gzip / Deflate Compression
+# ====================================================================
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
