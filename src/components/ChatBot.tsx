@@ -129,7 +129,7 @@ export const ChatBot: React.FC<ChatBotProps> = ({ onNavigate, onOpenContact }) =
       const fallbackMsg: ChatMessage = {
         id: `bot-err-${Date.now()}`,
         role: 'model',
-        content: `**NexSite AI Advisor Update:**\n\nNexSite offers tailored web development starting from **AUD $2,850** (Essential Launch) and **AUD $4,950** (High-Growth Engine) with guaranteed 98+ Lighthouse performance and 100% white-label agency execution under NDA.\n\nWould you like to review our packages or speak with our engineering pod directly?`,
+        content: `**NexSite AI Advisor Update:**\n\nNexSite offers tailored web development starting from **AUD $150** (Basic Package) and **AUD $250** (Recommended Package) with guaranteed 98+ Lighthouse performance and 100% white-label agency execution under NDA.\n\nWould you like to review our packages or speak with our engineering pod directly?`,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         modelUsed: 'nexsite-knowledge-engine',
       };

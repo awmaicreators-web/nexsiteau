@@ -64,6 +64,12 @@ export interface CaseStudy {
   stack: string;
   fullCaseSummary?: string;
   liveUrl?: string;
+  clientNeed?: string;
+  deliveredWork?: string;
+  supportedResult?: string;
+  isAssetPendingReview?: boolean;
+  isConceptWork?: boolean;
+  location?: string;
 }
 
 export interface AuthUser {

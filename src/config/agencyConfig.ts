@@ -109,7 +109,7 @@ export const AGENCY_CONFIG = {
       id: 'starter',
       name: 'Starter',
       tagline: 'For small businesses that need a professional online presence.',
-      priceAud: 999,
+      priceAud: 150,
       badge: 'Fast Turnaround',
       isPopular: false,
       idealFor: 'Sole traders, local services, trades & startups launching their first website.',
@@ -133,7 +133,7 @@ export const AGENCY_CONFIG = {
       id: 'business',
       name: 'Business',
       tagline: 'Most popular. Comprehensive solution for growing Australian businesses.',
-      priceAud: 1799,
+      priceAud: 250,
       badge: 'Most Popular',
       isPopular: true,
       idealFor: 'Established businesses, professional service firms & growing brands.',
@@ -159,7 +159,7 @@ export const AGENCY_CONFIG = {
       id: 'premium',
       name: 'Premium',
       tagline: 'For businesses that need a more advanced, high-performance website.',
-      priceAud: 2999,
+      priceAud: 350,
       badge: 'Advanced & Custom',
       isPopular: false,
       idealFor: 'eCommerce, multi-location companies, and organizations needing custom logic.',
@@ -457,7 +457,7 @@ export const AGENCY_CONFIG = {
     {
       question: 'How much does a website cost?',
       answer:
-        'Our transparent packages start at AUD $999 for our Starter package (up to 5 pages), AUD $1,799 for our Business package (up to 10 pages with custom UI/UX and CMS), and AUD $2,999 for our Premium package (up to 15 pages with WordPress CMS and advanced functionality). You can choose and purchase your package directly online with no hidden fees.',
+        'Our transparent packages start at AUD $150 for our Starter package (up to 5 pages), AUD $250 for our Business package (up to 10 pages with custom UI/UX and CMS), and AUD $350 for our Premium package (up to 15 pages with WordPress CMS and advanced functionality). You can choose and purchase your package directly online with no hidden fees.',
       category: 'pricing',
     },
     {

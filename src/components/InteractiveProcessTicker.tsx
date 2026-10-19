@@ -11,6 +11,7 @@
  */
 
 import React from 'react';
+import { ScrollReveal } from '../hooks/useScrollReveal';
 
 export const InteractiveProcessTicker: React.FC = () => {
   const tickerItems = [
@@ -23,12 +24,22 @@ export const InteractiveProcessTicker: React.FC = () => {
   ];
 
   return (
-    <section className="w-full py-16 lg:py-24 bg-[#F8F8F6] text-[#1A1C1C] transition-colors">
+    <section className="w-full py-16 lg:py-24 bg-[#F8F8F6] text-[#1A1C1C] transition-colors border-t border-[#E8E8E5]">
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-12 mb-12">
         <div className="p-8 sm:p-10 rounded-2xl bg-white border border-[#E8E8E5] shadow-sm">
+          {/* Introductory Partnership Lead (Moved from Hero) */}
+          <ScrollReveal delay={0} distance={16} className="max-w-3xl mb-8 pb-7 border-b border-[#E8E8E5]">
+            <span className="font-['JetBrains_Mono',monospace] text-[11px] leading-[16px] font-semibold text-[#1A5CFF] uppercase tracking-[0.08em] block mb-2">
+              HOW WE DELIVER
+            </span>
+            <p className="font-['Inter',sans-serif] text-base sm:text-[17px] text-[#444748] leading-relaxed">
+              We partner with design studios and agencies to handle development behind the scenes, ensuring projects are delivered on time and to a high standard.
+            </p>
+          </ScrollReveal>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             {/* Step 01 */}
-            <div className="flex flex-col group cursor-default">
+            <ScrollReveal delay={0} distance={20} className="flex flex-col group cursor-default">
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-7 h-7 rounded-lg bg-[#EBF1FF] text-[#1A5CFF] flex items-center justify-center font-mono text-xs font-bold">
                   1
@@ -43,10 +54,10 @@ export const InteractiveProcessTicker: React.FC = () => {
               <p className="text-sm text-[#8E8E8A] leading-relaxed">
                 We dive into your goals, audience, and vision to establish clear architectural direction.
               </p>
-            </div>
+            </ScrollReveal>
 
             {/* Step 02 */}
-            <div className="flex flex-col group cursor-default">
+            <ScrollReveal delay={80} distance={20} className="flex flex-col group cursor-default">
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-7 h-7 rounded-lg bg-[#EEEEEE] text-[#444748] flex items-center justify-center font-mono text-xs font-bold group-hover:bg-[#1A5CFF] group-hover:text-white transition-colors">
                   2
@@ -61,10 +72,10 @@ export const InteractiveProcessTicker: React.FC = () => {
               <p className="text-sm text-[#8E8E8A] leading-relaxed">
                 Mapping out the user journey, wireframes, and tech stack for seamless execution.
               </p>
-            </div>
+            </ScrollReveal>
 
             {/* Step 03 */}
-            <div className="flex flex-col group cursor-default">
+            <ScrollReveal delay={160} distance={20} className="flex flex-col group cursor-default">
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-7 h-7 rounded-lg bg-[#EEEEEE] text-[#444748] flex items-center justify-center font-mono text-xs font-bold group-hover:bg-[#1A5CFF] group-hover:text-white transition-colors">
                   3
@@ -79,10 +90,10 @@ export const InteractiveProcessTicker: React.FC = () => {
               <p className="text-sm text-[#8E8E8A] leading-relaxed">
                 Crafting high-converting UI and building clean, scalable code that performs reliably.
               </p>
-            </div>
+            </ScrollReveal>
 
             {/* Step 04 */}
-            <div className="flex flex-col group cursor-default">
+            <ScrollReveal delay={240} distance={20} className="flex flex-col group cursor-default">
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-7 h-7 rounded-lg bg-[#EEEEEE] text-[#444748] flex items-center justify-center font-mono text-xs font-bold group-hover:bg-[#1A5CFF] group-hover:text-white transition-colors">
                   4
@@ -97,7 +108,7 @@ export const InteractiveProcessTicker: React.FC = () => {
               <p className="text-sm text-[#8E8E8A] leading-relaxed">
                 Thorough testing, smooth deployment, and ongoing optimization to drive partner growth.
               </p>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </div>

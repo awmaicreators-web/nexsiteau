@@ -28,21 +28,21 @@ app.use(express.json());
 
 // CANONICAL SERVER-SIDE PACKAGES (From Approved Source of Truth)
 const SERVER_PACKAGES: Record<string, { id: string; name: string; priceAud: number }> = {
-  essential: { id: 'essential', name: 'Essential Agency Launch', priceAud: 2850 },
-  'high-growth': { id: 'high-growth', name: 'High-Growth Web Engine', priceAud: 4950 },
-  'dedicated-pod': { id: 'dedicated-pod', name: 'Dedicated Pod / White-Label', priceAud: 8500 },
+  essential: { id: 'essential', name: 'Essential Agency Launch', priceAud: 150 },
+  'high-growth': { id: 'high-growth', name: 'High-Growth Web Engine', priceAud: 250 },
+  'dedicated-pod': { id: 'dedicated-pod', name: 'Dedicated Pod / White-Label', priceAud: 350 },
   // Also accept legacy IDs if called
-  starter: { id: 'starter', name: 'Essential Agency Launch', priceAud: 2850 },
-  business: { id: 'business', name: 'High-Growth Web Engine', priceAud: 4950 },
-  premium: { id: 'premium', name: 'Dedicated Pod / White-Label', priceAud: 8500 },
+  starter: { id: 'starter', name: 'Essential Agency Launch', priceAud: 150 },
+  business: { id: 'business', name: 'High-Growth Web Engine', priceAud: 250 },
+  premium: { id: 'premium', name: 'Dedicated Pod / White-Label', priceAud: 350 },
 };
 
 // CANONICAL SERVER-SIDE ADD-ONS
 const SERVER_ADDONS: Record<string, { id: string; name: string; priceAud: number }> = {
-  'rush-delivery': { id: 'rush-delivery', name: 'Expedited 5-Day Rush Delivery', priceAud: 750 },
+  'rush-delivery': { id: 'rush-delivery', name: 'Expedited 5-Day Rush Delivery', priceAud: 50 },
   'white-label-nda': { id: 'white-label-nda', name: 'White-Label Partner SLA & Mutual NDA', priceAud: 0 },
-  'threejs-3d': { id: 'threejs-3d', name: 'Advanced 3D / WebGL / Three.js Scene Integration', priceAud: 1200 },
-  'stripe-billing': { id: 'stripe-billing', name: 'E-Commerce & Stripe Billing Automation', priceAud: 950 },
+  'threejs-3d': { id: 'threejs-3d', name: 'Advanced 3D / WebGL / Three.js Scene Integration', priceAud: 100 },
+  'stripe-billing': { id: 'stripe-billing', name: 'E-Commerce & Stripe Billing Automation', priceAud: 70 },
 };
 
 // In-memory order storage (in production, connected to DB)
@@ -353,20 +353,20 @@ NexSite Core Information:
 - Tech Stack: Next.js, React, TypeScript, Tailwind CSS, Three.js / WebGL, Node.js, Vite, Stripe AU, WooCommerce, and Headless CMS (Gutenberg / ACF Pro).
 
 Official Website Packages (AUD):
-1. "Essential Agency Launch" — AUD $2,850:
+1. "Essential Agency Launch" — AUD $150:
    - Up to 5 bespoke pages, responsive UI, 98+ Lighthouse speed, contact forms, standard SEO setup, 2 revision rounds.
    - Timeline: ~10 to 14 business days.
-2. "High-Growth Web Engine" — AUD $4,950 (Most Popular):
+2. "High-Growth Web Engine" — AUD $250 (Most Popular):
    - Up to 12 responsive pages, interactive micro-animations, integrated CMS, advanced SEO structure, GA4 analytics, 2 revision rounds.
    - Timeline: ~14 to 21 business days.
-3. "Dedicated Pod / White-Label" — AUD $8,500:
+3. "Dedicated Pod / White-Label" — AUD $350:
    - Unlimited custom pages/sprints, dedicated Slack channel, senior engineering team, sprint-based delivery, bespoke WebGL/3D, custom API integrations, 30-day priority VIP support.
    - Timeline: ~21 to 28 business days.
 
 Popular Add-Ons:
-- Expedited 5-Day Rush Delivery: AUD $750
-- Advanced 3D / WebGL / Three.js Scene: AUD $1,200
-- E-Commerce & Stripe Billing Automation: AUD $950
+- Expedited 5-Day Rush Delivery: AUD $50
+- Advanced 3D / WebGL / Three.js Scene: AUD $100
+- E-Commerce & Stripe Billing Automation: AUD $70
 - White-Label Partner SLA & Mutual NDA: Included / Free ($0)
 
 Payment Terms:
@@ -390,20 +390,20 @@ function generateNexSiteContextualFallback(query: string): string {
 
 We offer transparent, fixed-scope packages tailored for Australian businesses and agencies:
 
-1. **Essential Agency Launch — AUD $2,850**
+1. **Essential Agency Launch — AUD $150**
    - Up to 5 custom pages
    - Guaranteed 98+ Lighthouse performance
    - Mobile-first responsive UI & contact forms
    - Standard SEO & 2 revision rounds
    - *Delivery in 10–14 business days*
 
-2. **High-Growth Web Engine — AUD $4,950** *(Most Popular)*
+2. **High-Growth Web Engine — AUD $250** *(Most Popular)*
    - Up to 12 custom pages
    - Interactive micro-animations & CMS integration
    - Advanced SEO architecture & Google Analytics 4
    - *Delivery in 14–21 business days*
 
-3. **Dedicated Pod / White-Label — AUD $8,500**
+3. **Dedicated Pod / White-Label — AUD $350**
    - Unlimited custom pages & continuous sprints
    - Dedicated Slack pod with senior engineers
    - 3D/WebGL Three.js integrations & custom APIs
@@ -447,7 +447,7 @@ Our typical turnaround times:
 - **High-Growth Engine (Up to 12 pages):** 14–21 business days
 - **Dedicated Pod (Custom/Full build):** 21–28 business days
 
-**Need it sooner?** We offer an **Expedited 5-Day Rush Delivery** add-on (+$750 AUD) for time-critical agency deadlines.`;
+**Need it sooner?** We offer an **Expedited 5-Day Rush Delivery** add-on (+$50 AUD) for time-critical agency deadlines.`;
   }
 
   if (q.includes('process') || q.includes('how do you work') || q.includes('steps') || q.includes('workflow')) {
@@ -472,7 +472,7 @@ Our typical turnaround times:
 NexSite is an Australian digital engineering and UI/UX studio that designs and builds high-performance websites for businesses and creative agencies.
 
 Here is what I can help you with:
-- **Packages & Pricing:** Starter (AUD $2,850), Business (AUD $4,950), and Dedicated Pod (AUD $8,500).
+- **Packages & Pricing:** Starter (AUD $150), Business (AUD $250), and Dedicated Pod (AUD $350).
 - **Agency Partnerships:** 100% white-label development under strict NDA with direct Slack access.
 - **Tech Stack:** Next.js, React, TypeScript, Tailwind CSS, Three.js, and Stripe.
 - **Timelines & Process:** Fast 10–21 day turnaround with 98+ Google Lighthouse speed.
